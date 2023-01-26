@@ -1,0 +1,22 @@
+use("platzi-store")
+db.store.findOne({storeId: 'ST001'})
+db.store_details.findOne({storeId: 'ST001'})
+
+db.store.aggregate([
+  {
+    /**
+      * from: La colección de destino.
+      * localField: El campo de unión local.
+      * ForeignField: el campo de unión de destino.
+      * as: El nombre de los resultados.
+      * canalización: canalización opcional para ejecutar en la colección externa.
+      * let: Variables opcionales para usar en las etapas de campo de pipeline.
+      */
+    $lookup: {
+      from: 'store_details',
+      localField: 'storeId',
+      foreignField: 'storeId',
+      as: 'detail'
+    }
+  }
+])

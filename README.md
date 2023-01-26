@@ -50,3 +50,10 @@ https://www.mongodb.com/docs/manual/reference/mongodb-extended-json/
 -------------------------------------------------------------------------------------------------
 
 
+DESNORMALIZACION:
+Es el proceso de optimizar el funcionamiento de una DB agregando datos redundantes
+
+Computed pattern:
+1- Requerimientos (Workload)
+2- Identificar ER (Entidad-Relacion)
+3- Aplicar patrones

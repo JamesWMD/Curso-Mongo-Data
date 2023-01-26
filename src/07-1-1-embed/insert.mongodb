@@ -1,0 +1,18 @@
+use("platzi-store")
+
+db.users.insertOne({
+  last_name: "Molina",
+  email: "melany@gmail.com",
+  password:"Melany123",
+  social_accounts: ['twitter', 'facebook'],
+  address: {
+    street: 'cr 16d 5-121',
+    city: 'Santa Marta',
+    zip: '11011'
+  },
+  shipping_address: {
+    street: 'cr 16d 5-13',
+    city: 'Santa Marta',
+    zip: '12011'
+  }
+})

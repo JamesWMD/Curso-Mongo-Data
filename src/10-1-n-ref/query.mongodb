@@ -1,0 +1,24 @@
+use("platzi-store")
+//db.users.find()
+db.orders.find({ user_id: ObjectId('63d2de2efe3d1b03ebb59f12') })
+db.users.find({_id: ObjectId('63d2de2efe3d1b03ebb59f12')})
+
+
+db.orders.aggregate([
+  {
+    /**
+     * consulta: La consulta en MQL.
+     */
+    $match: {
+      _id: ObjectId('63d2e65940bc880b2a6cd22d')
+    }
+  },
+  {
+     $lookup: {
+      from: 'users',
+      localField: 'user_id',
+      foreignField: '_id',
+      as: 'user'
+    }
+  }
+])
